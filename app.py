@@ -1,3 +1,38 @@
+import subprocess
+import sys
+
+# ------------------------------------------------
+# 强行安装依赖包（专治各种不服）
+# ------------------------------------------------
+def install(package):
+    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+
+try:
+    import joblib
+except ImportError:
+    print("正在暴力安装 joblib...")
+    install('joblib')
+    import joblib
+
+try:
+    import sklearn
+except ImportError:
+    print("正在暴力安装 scikit-learn...")
+    install('scikit-learn')
+
+try:
+    import plotly
+except ImportError:
+    print("正在暴力安装 plotly...")
+    install('plotly')
+
+# ------------------------------------------------
+# 下面是你原来的代码
+# ------------------------------------------------
+import streamlit as st
+import pandas as pd
+import numpy as np
+# ... (保留你原来剩下的代码) ...
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -129,4 +164,5 @@ with tab2:
     trend = [base * (1 + 0.02 * i + np.random.normal(0, 0.02)) for i in range(12)]
     fig_trend = px.line(x=dates, y=trend, title="未来12个月预测")
     fig_trend.update_layout(paper_bgcolor="#1F2630", plot_bgcolor="#0E1117", font_color="#E0E0E0")
+
     st.plotly_chart(fig_trend, use_container_width=True)
