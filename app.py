@@ -1,12 +1,3 @@
-import subprocess
-import sys
-
-# ------------------------------------------------
-# 强行安装依赖包（专治各种不服）
-# ------------------------------------------------
-def install(package):
-    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
-
 try:
     import joblib
 except ImportError:
@@ -166,3 +157,4 @@ with tab2:
     fig_trend.update_layout(paper_bgcolor="#1F2630", plot_bgcolor="#0E1117", font_color="#E0E0E0")
 
     st.plotly_chart(fig_trend, use_container_width=True)
+
