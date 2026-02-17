@@ -1,0 +1,5 @@
+2026-02-17 16:33:28,309 - shenzhen_housing - INFO - Loading dataset into memory...
+2026-02-17 16:33:29,942 - shenzhen_housing - INFO - Model loaded successfully.
+2026-02-17 16:33:49,611 - shenzhen_housing - INFO - Model loaded successfully.
+2026-02-17 16:34:07,006 - shenzhen_housing - INFO - Model loaded successfully.
+2026-02-17 16:34:07,096 - shenzhen_housing - INFO - Prediction success: 1000.81
